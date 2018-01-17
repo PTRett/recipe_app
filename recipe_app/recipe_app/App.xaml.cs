@@ -13,7 +13,18 @@ namespace recipe_app
         {
             InitializeComponent();
 
-            MainPage = new recipe_app.MainPage();
+            MainPage = new CarouselPage
+            {
+                Children =
+                {
+                    new Pantry(),
+                    new Suggestions(),
+                    new ShoppingList()
+                }
+            };
+            //var pages = Children.GetEnumerator();
+            //pages.MoveNext();
+            //CurrentPage = pages.Current;
         }
 
         protected override void OnStart()
